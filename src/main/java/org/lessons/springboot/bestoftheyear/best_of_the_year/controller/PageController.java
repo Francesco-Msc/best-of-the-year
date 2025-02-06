@@ -15,4 +15,5 @@ public class PageController {
         model.addAttribute("name", name);
         return "index";
     }
+    
 }
