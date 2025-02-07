@@ -65,4 +65,19 @@ public class PageController {
         model.addAttribute("movie", chosenMovie);
         return "movieDetails";
     }
+
+    @GetMapping("/songs/{id}")
+    public String songDetails(@PathVariable int id, Model model){
+        List<Songs> songs = getBestSongs();
+
+        Songs chosenSong = null;
+        for (Songs song : songs) {
+            if (song.getId() == id) {
+                chosenSong = song;
+                break;
+            }
+        }
+        model.addAttribute("song", chosenSong);
+        return "songDetails";
+    }
 }
