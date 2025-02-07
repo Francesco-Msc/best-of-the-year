@@ -6,6 +6,8 @@
     <title>Best movies</title>
 </head>
 <body>
-    
+    <ul>
+        <li th:each="movie : ${movies}" th:text="${movie.title}"></li>
+    </ul>
 </body>
 </html>

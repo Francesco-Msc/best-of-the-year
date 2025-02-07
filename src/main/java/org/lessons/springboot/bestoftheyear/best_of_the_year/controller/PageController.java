@@ -31,7 +31,8 @@ public class PageController {
     }
 
     @GetMapping("/movies")
-    public String movies(){
+    public String movies(Model model){
+        model.addAttribute("movies", getBestMovies());
         return "movies";
     }
 
