@@ -37,7 +37,8 @@ public class PageController {
     }
 
     @GetMapping("/songs")
-    public String songs(){
+    public String songs(Model model){
+        model.addAttribute("songs", getBestSongs());
         return "songs";
     }
 }
