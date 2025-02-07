@@ -8,6 +8,7 @@ import org.lessons.springboot.bestoftheyear.best_of_the_year.models.Songs;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 @Controller
@@ -24,9 +25,9 @@ public class PageController {
 
     private List<Movies> getBestMovies(){
         return Arrays.asList(
-            new Movies(1, "Interstellar"),
-            new Movies(2, "Dune"),
-            new Movies(3, "Spider-Man: No Way Home")
+            new Movies(1, "Interstellar", "Sci-fi/Avventura", "2h 49m"),
+            new Movies(2, "Dune", "Sci-fi/Avventura", "2h 35m"),
+            new Movies(3, "Spider-Man: No Way Home", "Azione/Sci-fi", "2h 28m")
             );
     }
 
@@ -48,5 +49,20 @@ public class PageController {
     public String songs(Model model){
         model.addAttribute("songs", getBestSongs());
         return "songs";
+    }
+
+    @GetMapping("/movies/{id}")
+    public String movieDetails(@PathVariable int id, Model model){
+        List<Movies> movies = getBestMovies();
+
+        Movies chosenMovie = null;
+        for (Movies movie : movies) {
+            if (movie.getId() == id) {
+                chosenMovie = movie;
+                break;
+            }
+        }
+        model.addAttribute("movie", chosenMovie);
+        return "movieDetails";
     }
 }
