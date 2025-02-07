@@ -29,4 +29,14 @@ public class PageController {
     private List<Songs> getBestSongs(){
         return Arrays.asList(new Songs(1, "Never gonna give you up"));
     }
+
+    @GetMapping("/movies")
+    public String movies(){
+        return "movies";
+    }
+
+    @GetMapping("/songs")
+    public String songs(){
+        return "songs";
+    }
 }
