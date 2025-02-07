@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best movies</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 <body>
-    <ul>
-        <li th:each="movie : ${movies}" th:text="${movie.title}"></li>
-    </ul>
+    <header>
+        <nav class="navbar bg-body-secondary">
+            <div class="ms-3">
+                <h1>Best Movies</h1>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-3">
+        <ul th:each="movie : ${movies}">
+            <li>
+                <a th:href="@{/movies/{id}(id=${movie.id})}" th:text="${movie.title}"></a>
+            </li>
+        </ul>
+    </main>
 </body>
 </html>
