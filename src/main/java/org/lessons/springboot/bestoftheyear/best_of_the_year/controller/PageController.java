@@ -33,9 +33,9 @@ public class PageController {
 
     private List<Songs> getBestSongs(){
         return Arrays.asList(
-            new Songs(1, "Creep", "Radiohead"),
-            new Songs(2, "Numb", "Linkin Park"),
-            new Songs(3, "21 Guns", "Green Day")
+            new Songs(1, "Creep", "Radiohead", "XFkzRNyygfk"),
+            new Songs(2, "Numb", "Linkin Park", "kXYiU_JCYtU"),
+            new Songs(3, "21 Guns", "Green Day", "r00ikilDxW4")
             );
     }
 
