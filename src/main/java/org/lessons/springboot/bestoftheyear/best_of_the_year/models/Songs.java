@@ -3,10 +3,12 @@ package org.lessons.springboot.bestoftheyear.best_of_the_year.models;
 public class Songs {
     private int id;
     private String title;
+    private String artist;
 
-    public Songs(int id, String title){
+    public Songs(int id, String title, String artist){
         this.id = id;
         this.title = title;
+        this.artist = artist;
     }
     
     public int getId() {
@@ -23,5 +25,13 @@ public class Songs {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 }

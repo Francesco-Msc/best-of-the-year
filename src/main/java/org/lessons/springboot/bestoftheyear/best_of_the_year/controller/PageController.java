@@ -23,11 +23,19 @@ public class PageController {
     }
 
     private List<Movies> getBestMovies(){
-        return Arrays.asList(new Movies(1, "Interstellar"));
+        return Arrays.asList(
+            new Movies(1, "Interstellar"),
+            new Movies(2, "Dune"),
+            new Movies(3, "Spider-Man: No Way Home")
+            );
     }
 
     private List<Songs> getBestSongs(){
-        return Arrays.asList(new Songs(1, "Never gonna give you up"));
+        return Arrays.asList(
+            new Songs(1, "Creep", "Radiohead"),
+            new Songs(2, "Numb", "Linkin Park"),
+            new Songs(3, "21 Guns", "Green Day")
+            );
     }
 
     @GetMapping("/movies")
