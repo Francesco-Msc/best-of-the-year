@@ -6,20 +6,16 @@
     <title>Best movies</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
-<body>
+<body class="container">
     <header>
-        <nav class="navbar bg-body-secondary">
-            <div class="ms-3">
-                <h1>Best Movies</h1>
-            </div>
-        </nav>
+        <header th:replace="fragments/fragments :: navbar"></header>
     </header>
-    <main class="container mt-3">
-        <ul th:each="movie : ${movies}">
-            <li>
-                <a th:href="@{/movies/{id}(id=${movie.id})}" th:text="${movie.title}"></a>
-            </li>
-        </ul>
+    <main>
+        <div class="border border-top-0 border-dark text-center container p-3">
+            <h4 class="text-center my-3">Best Movies</h4>
+            <div class="d-grid gap-3 col-6 mx-auto mb-5 border border-bottom-0 border-dark">
+                <a class="border-bottom border-dark py-3" th:each="movie : ${movies}" th:text="${movie.title}" th:href="@{/movies/{id}(id=${movie.id})}"></a>
+        </div>
     </main>
 </body>
 </html>

@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
-<body>
-    <h1 class="m-2" th:text="|Best of the year by ${name}|"></h1>
-    <div class="mt-3">
-        <ul>
-            <li><a href="/movies">Best movies</a></li>
-            <li><a href="/songs">Best songs</a></li>
-        </ul>
-    </div>
+
+<body class="container">
+    <header>
+        <header th:replace="fragments/fragments :: navbar"></header>
+    </header>
+    <main>
+        <div class="border border-top-0 border-dark text-center container">
+            <div class="p-3">
+                <h4 class="mt-5" th:text="|Best of the year by ${name}|"></h4>
+                <div class="bg-warning py-5 mx-5">image</div>
+                <div class="border border-dark py-5 mx-5 mb-5">lorem ipsum</div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

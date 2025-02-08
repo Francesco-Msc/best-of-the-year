@@ -6,13 +6,9 @@
     <title>Best songs</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
-<body>
+<body class="container">
     <header>
-        <nav class="navbar bg-body-secondary">
-            <div class="ms-3">
-                <h1 class="text-center">Best Songs</h1>
-            </div>
-        </nav>
+        <header th:replace="fragments/fragments :: navbar"></header>
     </header>
     <main class="container mt-3">
         <ul th:each="song : ${songs}">
