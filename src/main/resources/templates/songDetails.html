@@ -8,14 +8,10 @@
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 
-<body>
-    <header>
-        <h1 class="m-2">Song details</h1>
-    </header>
-    <main class="container">
-        <div th:text="|Title: ${song.title}|"></div>
-        <div class="my-2" th:text="|Artist: ${song.artist}|"></div>
-        <div><iframe width="560" height="315" th:src="'https://www.youtube.com/embed/' + ${song.iframeID}" frameborder="0" allowfullscreen></iframe></div>
+<body class="container">
+    <header th:replace="fragments/fragments :: navbar"></header>
+    <main>
+        <div th:replace="fragments/fragments :: song-details"></div>
     </main>
 </body>
 

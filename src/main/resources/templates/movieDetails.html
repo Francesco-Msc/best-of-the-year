@@ -6,14 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
-<body>
-    <header>
-        <h1 class="m-2">Movie details</h1>
-    </header>
-    <main class="container">
-        <div class="mt-2" th:text="|Title: ${movie.title}|"></div>
-        <div class="my-2" th:text="|Genre: ${movie.genre}|"></div>
-        <div th:text="|Duration: ${movie.duration}|"></div>
+<body class="container">
+    <header th:replace="fragments/fragments :: navbar"></header>
+    <main>
+        <div th:replace="fragments/fragments :: movie-details"></div>
     </main>
 </body>
 </html>
