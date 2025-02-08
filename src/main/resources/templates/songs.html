@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 <body class="container">
-    <header>
-        <header th:replace="fragments/fragments :: navbar"></header>
-    </header>
+    <header th:replace="fragments/fragments :: navbar"></header>
     <main>
-        <div th:replace="fragments/fragments :: contentList(${songs}, null)"></div>
+        <div th:replace="fragments/fragments :: songsList"></div>
     </main>
 </body>
 </html>

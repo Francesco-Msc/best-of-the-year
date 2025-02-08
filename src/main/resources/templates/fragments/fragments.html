@@ -2,19 +2,33 @@
 <div th:fragment="navbar" class="d-flex justify-content-start align-items-center border border-dark mt-2">
     <h3 class="mb-0 border-end border-dark p-3">Best of</h3>
     <div class="ms-3">
-        <button class="btn btn-outline-primary me-2" id="movies">Movies</button>
-        <button class="btn btn-outline-primary" id="songs">Songs</button>
+        <a href="/movies" class="btn btn-outline-primary me-2" id="movies">Movies</a>
+        <a href="/songs" class="btn btn-outline-primary" id="songs">Songs</a>
     </div>
 </div>
 
-<!-- content fragment -->
-<div th:fragment="contentList(movies, songs)">
+<!-- movies fragment -->
+<div th:fragment="moviesList">
     <div class="border border-top-0 border-dark text-center container p-3">
-      <h4 class="text-center my-3" th:if="${movies}" th:text="'Best Movies'"></h4>
-      <h4 class="text-center my-3" th:if="${songs}" th:text="'Best Songs'"></h4>
-      <div class="d-grid gap-3 col-6 mx-auto mb-5 border border-bottom-0 border-dark">
-        <a class="border-bottom border-dark py-3" th:each="movie : ${movies}" th:text="${movie.title}" th:href="@{/movies/{id}(id=${movie.id})}" th:if="${movies}"></a>
-        <a class="border-bottom border-dark py-3" th:each="song : ${songs}" th:text="${song.title}" th:href="@{/songs/{id}(id=${song.id})}" th:if="${songs}"></a>
-      </div>
+        <h4 class="text-center my-3" th:text="${title}"></h4>
+        <div class="d-grid gap-3 col-6 mx-auto mb-5 border border-bottom-0 border-dark">
+            <a class="border-bottom border-dark py-3" th:each="movie : ${movies}" th:text="${movie.title}"
+                th:href="@{/movies/{id}(id=${movie.id})}" th:if="${movies}"></a>
+        </div>
     </div>
-  </div>
+</div>
+
+<!-- songs fragment -->
+<div th:fragment="songsList">
+    <div class="border border-top-0 border-dark text-center container p-3">
+        <h4 class="text-center my-3" th:text="${title}"></h4>
+        <div class="d-grid gap-3 col-6 mx-auto mb-5 border border-bottom-0 border-dark">
+            <a class="border-bottom border-dark py-3" th:each="song : ${songs}" th:text="${song.title}"
+                th:href="@{/songs/{id}(id=${song.id})}" th:if="${songs}"></a>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="movie-details">
+    <h4 class="text-center my-3" th:text="'Movie details'"></h4>
+</div>
