@@ -42,12 +42,14 @@ public class PageController {
     @GetMapping("/movies")
     public String movies(Model model){
         model.addAttribute("movies", getBestMovies());
+        model.addAttribute("title", "Best Movies");
         return "movies";
     }
 
     @GetMapping("/songs")
     public String songs(Model model){
         model.addAttribute("songs", getBestSongs());
+        model.addAttribute("title", "Best Songs");
         return "songs";
     }
 
