@@ -6,3 +6,15 @@
         <button class="btn btn-outline-primary" id="songs">Songs</button>
     </div>
 </div>
+
+<!-- content fragment -->
+<div th:fragment="contentList(movies, songs)">
+    <div class="border border-top-0 border-dark text-center container p-3">
+      <h4 class="text-center my-3" th:if="${movies}" th:text="'Best Movies'"></h4>
+      <h4 class="text-center my-3" th:if="${songs}" th:text="'Best Songs'"></h4>
+      <div class="d-grid gap-3 col-6 mx-auto mb-5 border border-bottom-0 border-dark">
+        <a class="border-bottom border-dark py-3" th:each="movie : ${movies}" th:text="${movie.title}" th:href="@{/movies/{id}(id=${movie.id})}" th:if="${movies}"></a>
+        <a class="border-bottom border-dark py-3" th:each="song : ${songs}" th:text="${song.title}" th:href="@{/songs/{id}(id=${song.id})}" th:if="${songs}"></a>
+      </div>
+    </div>
+  </div>

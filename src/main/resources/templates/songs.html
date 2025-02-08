@@ -10,12 +10,8 @@
     <header>
         <header th:replace="fragments/fragments :: navbar"></header>
     </header>
-    <main class="container mt-3">
-        <ul th:each="song : ${songs}">
-            <li>
-                <a th:href="@{/songs/{id}(id=${song.id})}" th:text="|${song.title} - ${song.artist}|"></a>
-            </li>
-        </ul>
+    <main>
+        <div th:replace="fragments/fragments :: contentList(${songs}, null)"></div>
     </main>
 </body>
 </html>

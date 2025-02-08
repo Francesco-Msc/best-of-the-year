@@ -11,11 +11,7 @@
         <header th:replace="fragments/fragments :: navbar"></header>
     </header>
     <main>
-        <div class="border border-top-0 border-dark text-center container p-3">
-            <h4 class="text-center my-3">Best Movies</h4>
-            <div class="d-grid gap-3 col-6 mx-auto mb-5 border border-bottom-0 border-dark">
-                <a class="border-bottom border-dark py-3" th:each="movie : ${movies}" th:text="${movie.title}" th:href="@{/movies/{id}(id=${movie.id})}"></a>
-        </div>
+        <div th:replace="fragments/fragments :: contentList(${movies}, null)"></div>
     </main>
 </body>
 </html>
