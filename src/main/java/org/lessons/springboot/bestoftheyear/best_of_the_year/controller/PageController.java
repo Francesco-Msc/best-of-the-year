@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PageController {
     
     @GetMapping("/")
-    public String index(@RequestParam String name, Model model){
+    public String index(@RequestParam(defaultValue = "Guest") String name, Model model){
         model.addAttribute("name", name);
         model.addAttribute("movies", getBestMovies());
         model.addAttribute("songs", getBestSongs());
