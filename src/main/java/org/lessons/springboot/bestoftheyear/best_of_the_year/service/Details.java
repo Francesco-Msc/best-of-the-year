@@ -1,6 +1,6 @@
 package org.lessons.springboot.bestoftheyear.best_of_the_year.service;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.lessons.springboot.bestoftheyear.best_of_the_year.models.Movies;
@@ -11,23 +11,23 @@ import org.springframework.stereotype.Service;
 public class Details {
     
     private List<Songs> bestSongs(){
-        return Arrays.asList(
-            new Songs(1, "Creep", "Radiohead", "XFkzRNyygfk"),
-            new Songs(2, "Numb", "Linkin Park", "kXYiU_JCYtU"),
-            new Songs(3, "21 Guns", "Green Day", "r00ikilDxW4"),
-            new Songs(4, "Now I Know Their Name", "Paolo Mosca", "0a9BqkhtPo0")
-            );
+        List<Songs> songList = new ArrayList<>();
+            songList.add(new Songs(1, "Creep", "Radiohead", "XFkzRNyygfk"));
+            songList.add(new Songs(2, "Numb", "Linkin Park", "kXYiU_JCYtU"));
+            songList.add(new Songs(3, "21 Guns", "Green Day", "r00ikilDxW4"));
+            songList.add(new Songs(4, "Now I Know Their Name", "Paolo Mosca", "0a9BqkhtPo0"));
+            return songList;
     }
 
     private List<Movies> bestMovies(){
-        return Arrays.asList(
-            new Movies(1, "Interstellar", "Sci-fi/Avventura", "2h 49m"),
-            new Movies(2, "Dune", "Sci-fi/Avventura", "2h 35m"),
-            new Movies(3, "Spider-Man: No Way Home", "Azione/Sci-fi", "2h 28m"),
-            new Movies(4, "Il Signore degli Anelli - La Compagnia dell'Anello", "Fantastico/Avventura", "2h 58m"),
-            new Movies(5, "Matrix", "Azione/Sci-fi", "2h 16m"),
-            new Movies(6, "Una notte da leoni", "Commedia/Avventura", "1h 40m")
-            );
+        List<Movies> movieList = new ArrayList<>();
+            movieList.add(new Movies(1, "Interstellar", "Sci-fi/Avventura", "2h 49m"));
+            movieList.add(new Movies(2, "Dune", "Sci-fi/Avventura", "2h 35m"));
+            movieList.add(new Movies(3, "Spider-Man: No Way Home", "Azione/Sci-fi", "2h 28m"));
+            movieList.add(new Movies(4, "Il Signore degli Anelli - La Compagnia dell'Anello", "Fantastico/Avventura", "2h 58m"));
+            movieList.add(new Movies(5, "Matrix", "Azione/Sci-fi", "2h 16m"));
+            movieList.add(new Movies(6, "Una notte da leoni", "Commedia/Avventura", "1h 40m"));
+            return movieList;
     }
 
     public List<Songs> getBestSongs(){
