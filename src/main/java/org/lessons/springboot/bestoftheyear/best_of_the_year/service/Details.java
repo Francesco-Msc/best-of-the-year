@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Details {
     
-    private static List<Songs> bestSongs(){
+    private List<Songs> bestSongs(){
         return Arrays.asList(
             new Songs(1, "Creep", "Radiohead", "XFkzRNyygfk"),
             new Songs(2, "Numb", "Linkin Park", "kXYiU_JCYtU"),
@@ -18,7 +18,7 @@ public class Details {
             );
     }
 
-    private static List<Movies> bestMovies(){
+    private List<Movies> bestMovies(){
         return Arrays.asList(
             new Movies(1, "Interstellar", "Sci-fi/Avventura", "2h 49m"),
             new Movies(2, "Dune", "Sci-fi/Avventura", "2h 35m"),
@@ -26,16 +26,16 @@ public class Details {
             );
     }
 
-    public static List<Songs> getBestSongs(){
+    public List<Songs> getBestSongs(){
         return bestSongs();
     }
 
-    public static List<Movies> getBestMovies(){
+    public List<Movies> getBestMovies(){
         return bestMovies();
     }
 
 
-    public static Songs getSongByID(List<Songs> songs, int id){
+    public Songs getSongByID(List<Songs> songs, int id){
         Songs chosenSong = null;
         for (Songs song : songs) {
             if (song.getId() == id) {
@@ -46,7 +46,7 @@ public class Details {
         return chosenSong;
     }
 
-    public static Movies getMovieByID(List<Movies> movies, int id){
+    public Movies getMovieByID(List<Movies> movies, int id){
         Movies chosenMovie = null;
         for (Movies movie : movies) {
             if (movie.getId() == id) {

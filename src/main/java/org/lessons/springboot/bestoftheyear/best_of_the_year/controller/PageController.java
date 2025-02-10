@@ -12,39 +12,44 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/")
 public class PageController {
+
+    private final Details details;
+    public PageController(Details details){
+        this.details = details;
+    }
     
     @GetMapping("/")
     public String index(@RequestParam(defaultValue = "Guest") String name, Model model){
         model.addAttribute("name", name);
-        model.addAttribute("movies", Details.getBestMovies());
-        model.addAttribute("songs", Details.getBestSongs());
+        model.addAttribute("movies", details.getBestMovies());
+        model.addAttribute("songs", details.getBestSongs());
         return "index";
     }
 
     @GetMapping("/movies")
     public String movies(Model model){
-        model.addAttribute("movies", Details.getBestMovies());
+        model.addAttribute("movies", details.getBestMovies());
         model.addAttribute("title", "Best Movies");
         return "movies";
     }
 
     @GetMapping("/songs")
     public String songs(Model model){
-        model.addAttribute("songs", Details.getBestSongs());
+        model.addAttribute("songs", details.getBestSongs());
         model.addAttribute("title", "Best Songs");
         return "songs";
     }
 
     @GetMapping("/movies/{id}")
     public String movieDetails(@PathVariable int id, Model model){
-        Movies chosenMovie = Details.getMovieByID(Details.getBestMovies(), id);
+        Movies chosenMovie = details.getMovieByID(details.getBestMovies(), id);
         model.addAttribute("movie", chosenMovie);
         return "movieDetails";
     }
 
     @GetMapping("/songs/{id}")
     public String songDetails(@PathVariable int id, Model model){
-        Songs chosenSongs = Details.getSongByID(Details.getBestSongs(), id);
+        Songs chosenSongs = details.getSongByID(details.getBestSongs(), id);
         model.addAttribute("song", chosenSongs);
         return "songDetails";
     }
